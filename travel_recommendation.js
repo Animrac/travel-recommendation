@@ -23,7 +23,10 @@ function searchCondition() {
         if (input.toLowerCase() === "beaches" || input.toLowerCase() === "beach") {
             destKeyword = data.beaches;        
         }
-        
+        if (input.toLowerCase() === "country" || input.toLowerCase() === "countries") {
+            destKeyword = data.countries;        
+        }
+
         if (destCountries) {
             for (let j = 0; j < destCountries.cities.length; j++) {
                 resultDiv.innerHTML += `<h2>${destCountries.cities[j].name}</h2>`;
