@@ -26,8 +26,12 @@ nav {
   
   nav a {
     text-decoration: none;
-    color: #161616;
+    color: #ffffff;
     font-weight: bold;
+  }
+
+  input {
+    border-radius: 15px; 
   }
   
   /* Basic CSS for the form elements */
@@ -37,7 +41,8 @@ nav {
   }
   
   h1 {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+    color: #fff
   }
   
   div {
@@ -59,6 +64,7 @@ nav {
   button {
     padding: 7px 15px;
     background-color: #4CAF50;
+    border-radius: 15px; 
     color: white;
     border: none;
     cursor: pointer;
@@ -90,4 +96,17 @@ nav {
     width: 200px;
     height: 100px;
   }
+
+  #centerNav {
+    align-items: center;
+  }
   
+  #endNav {
+    align-items: right;
+
+  }
+
+  li {
+    display: inline;
+    padding: 20px;
+  }
