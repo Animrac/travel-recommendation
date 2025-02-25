@@ -6,31 +6,32 @@
   <link rel="stylesheet" href="./travel_recommendation.css">
 </head>
 <body>
-   <nav><h2>Wanderful</h2>
-    <div id='centerNav'>
-        <li><a href="./travel_recommendation.html" id="home">Home</a></li>
-        <li><a href="./travel_recommendation_about.html" id="home">About Us</a></li>
-        <li><a href="./travel_recommendation_contact.html" id="contact">Contact Us</a></li>
-    </div>
-    <div id='endNav'>
-  <li><input type="text" id="conditionInput" placeholder="Enter destination or keyword">   
-    <li><button id='btnSearch'>Search</button></li>
-    <li><button id='btnClear'>Clear</button></li>
- </li>
-</div>
-</nav>
+   <nav>
+        <img class="icon-img" src="boat.png" alt="boat symbol">
+        <h2>Wanderful</h2>
+        <div id='centerNav'>
+            <li><a href="./travel_recommendation.html" id="home">Home</a></li>
+            <li><a href="./travel_recommendation_about.html" id="home">About Us</a></li>
+            <li><a href="./travel_recommendation_contact.html" id="contact">Contact Us</a></li>
+        </div>
+        <div id='endNav'>
+            <li><input type="text" id="conditionInput" placeholder="Enter destination or keyword">   
+            <li><button id='btnSearch'>Search</button></li>
+            <li><button id='btnClear'>Clear</button></li>
+        </div>
+    </nav>
   <div class="background-container">
     <div class="container">
         <div class="left-container">
             <h1>EXPLORE DREAM DESTINATIONS</h1>
-            <p>Feel free to contact us to know more about your conditions and for treatment methods.</p>
-            <li><button id='btnBook'>BOOK NOW</button></li>
+            <p>Wander into your next vacation.</p>
+            <li><button id='btnBook'><h2>BOOK NOW</h2></button></li>
         </div>
-        <div class="right-container">
-
+        <div class="right-container" id="possibleDestinations">
+            <p>Start your journey by entering a destination or keyword in the search bar!</p
         </div>
     </div>
-  <div class="background-container">
+</div>
 <script src="./travel_recommendation.js"></script>
 </body>
 </html>
