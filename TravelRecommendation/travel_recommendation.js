@@ -5,7 +5,6 @@ const destinations = [];
 
 function resetForm() {
     document.getElementById("conditionInput").value = "";
-    // document.querySelector('destinations').checked = false;
     destinations = [];
 }
 
@@ -16,11 +15,28 @@ function searchCondition() {
     fetch('travel_recommendation_api.json')
       .then(response => response.json()) //fetch return
       .then(data => {
-        const dest = data.countries.find(item => item.name.toLowerCase() === input);
-        if (dest) {
-          resultDiv.innerHTML += `<h2>${dest.name}</h2>`;
-          resultDiv.innerHTML += `<img src="${dest.imageUrl}" alt="Destination Image">`;
-          resultDiv.innerHTML += `<p><strong>Description:</strong> ${dest.description}</p>`;
+        const destCountries = data.countries.find(item => item.name.toLowerCase() === input.toLowerCase());
+        let destKeyword;
+        if (input.toLowerCase() === "temples" || input.toLowerCase() === "temple") {
+            destKeyword = data.temples;
+            console.log(destKeyword)
+        }
+        if (input.toLowerCase() === "beaches" || input.toLowerCase() === "beach") {
+            destKeyword = data.beaches;        
+        }
+        
+        if (destCountries) {
+            for (let j = 0; j < destCountries.cities.length; j++) {
+                resultDiv.innerHTML += `<h2>${destCountries.cities[j].name}</h2>`;
+                resultDiv.innerHTML += `<img src="${destCountries.cities[j].imageUrl}" alt="Destination Image" class="dest-img">`;
+                resultDiv.innerHTML += `<p><strong>Description:</strong> ${destCountries.cities[j].description}</p><div class="divider"></div>`;
+            }
+        } else if (destKeyword) {
+            for (const d of destKeyword) {
+                resultDiv.innerHTML += `<h2>${d.name}</h2>`;
+                resultDiv.innerHTML += `<img src="${d.imageUrl}" alt="Destination Image" class="dest-img">`;
+                resultDiv.innerHTML += `<p><strong>Description:</strong> ${d.description}</p><div class="divider"></div>`;
+            }
         } else {
           resultDiv.innerHTML = 'There are no matching destinations.';
         }
