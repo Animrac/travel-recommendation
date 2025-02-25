@@ -1,16 +1,15 @@
-const bookButton = document.getElementById("btnBook");
+const bookButton = document.getElementById("btnBook"); //doesn't need to do anything
 const clearButton = document.getElementById("btnClear");
 const searchButton = document.getElementById('btnSearch');
-const destinations = [];
+const resultDiv = document.getElementById('possibleDestinations');
 
 function resetForm() {
     document.getElementById("conditionInput").value = "";
-    destinations = [];
+    resultDiv.innerHTML = '<p>Start your journey by entering a destination or keyword in the search bar!</p>';
 }
 
 function searchCondition() {
     const input = document.getElementById('conditionInput').value.toLowerCase();
-    const resultDiv = document.getElementById('possibleDestinations');
     resultDiv.innerHTML = '';
     fetch('travel_recommendation_api.json')
       .then(response => response.json()) //fetch return
