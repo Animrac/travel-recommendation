@@ -24,10 +24,16 @@ function searchCondition() {
             destKeyword = data.beaches;        
         }
         if (input.toLowerCase() === "country" || input.toLowerCase() === "countries") {
-            destKeyword = data.countries;        
-        }
-
-        if (destCountries) {
+            destKeyword = data.countries; 
+            for (const d of destKeyword) {
+                resultDiv.innerHTML += `<h2>${d.name}</h2>`;
+                for (let j = 0; j < d.cities.length; j++) {
+                    resultDiv.innerHTML += `<h2>${d.cities[j].name}</h2>`;
+                    resultDiv.innerHTML += `<img src="${d.cities[j].imageUrl}" alt="Destination Image" class="dest-img">`;
+                    resultDiv.innerHTML += `<p><strong>Description:</strong> ${d.cities[j].description}</p><div class="divider"></div>`;
+                }
+            }       
+        } else if (destCountries) {
             for (let j = 0; j < destCountries.cities.length; j++) {
                 resultDiv.innerHTML += `<h2>${destCountries.cities[j].name}</h2>`;
                 resultDiv.innerHTML += `<img src="${destCountries.cities[j].imageUrl}" alt="Destination Image" class="dest-img">`;
