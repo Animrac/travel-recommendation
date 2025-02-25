@@ -10,7 +10,10 @@ nav {
     padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    width: 100%;
+    position: fixed;
+    top: 0;
     
   }
   
@@ -42,12 +45,14 @@ nav {
   
   h1 {
     /* margin-bottom: 20px; */
-    color: #fff
+    color: #fff;
+    font-size: 350%;
+    font-style: bold;
   }
   
-  div {
-    margin-bottom: 10px;
-  }
+  /* div {
+    padding: 10px;
+  } */
   
   label {
     display: inline-block;
@@ -57,8 +62,8 @@ nav {
   input[type="text"],
   input[type="number"],
   select {
-    width: 200px;
-    padding: 5px;
+    width: 250px;
+    padding: 5px 10px;
   }
   
   button {
@@ -74,9 +79,10 @@ nav {
     background-color: #45a049;
   }
   
-  /* Basic CSS for the report section */
   h2 {
-    margin-top: 30px;
+    color: #fff;
+    font-size: 150%;
+    font-style: bold;
   }
   
   #report,#result {
@@ -98,15 +104,53 @@ nav {
   }
 
   #centerNav {
-    align-items: center;
+    justify-content: left;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    padding-left: 30px;
+    gap: 20px; 
   }
   
   #endNav {
-    align-items: right;
+    justify-content: right;
+    width: 20%;
+    display: flex;
+    flex-direction: row; 
+    gap: 5px; 
 
   }
 
   li {
     display: inline;
-    padding: 20px;
+  }
+
+  .background-container {
+    background-image: linear-gradient(45deg, rgba(60, 102, 58, 0.75), rgba(156, 8, 134, 0)), url('dream\ destination.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    /* padding: 20px; */
+    box-sizing: border-box;
+  }
+
+  .container {
+    flex-direction: row;
+    display: flex;
+  }
+
+  .left-container {
+    text-align: left;
+    display: flex;
+    flex-direction: column; 
+    gap: 20px; 
+    width: 50%
+  }
+  .right-container {
+    width: 50%;
   }
